@@ -26,13 +26,26 @@ randomScore()
      }
 console.log(crystal.crystalValues)
 
-// assign values to crystals from crystal value array
-     $("#redcrystal").val(crystal.crystalValues[0])
-     $("#bluecrystal").val(crystal.crystalValues[1])
-     $("#yellowcrystal").val(crystal.crystalValues[2])
-     $("#greencrystal").val(crystal.crystalValues[3])
-
-    
 /* create an on click function that takes the value of the crystal clicked and add it to current score */
+     $("#redcrystal").on("click", function (){
+         crystal.currentScore = parseInt(crystal.crystalValues[0]) + parseInt(crystal.currentScore);
+         console.log(crystal.currentScore)
+     })
+
+     $("#bluecrystal").on("click", function (){
+        crystal.currentScore = parseInt(crystal.crystalValues[1]) + parseInt(crystal.currentScore);
+        console.log(crystal.currentScore)
+    })
+
+    $("#greencrystal").on("click", function (){
+        crystal.currentScore = parseInt(crystal.crystalValues[2]) + parseInt(crystal.currentScore);
+        console.log(crystal.currentScore)
+    })
+
+    $("#yellowcrystal").on("click", function (){
+        crystal.currentScore = parseInt(crystal.crystalValues[3]) + parseInt(crystal.currentScore);
+        console.log(crystal.currentScore)
+    })
+
 /* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
 /* reset game */
