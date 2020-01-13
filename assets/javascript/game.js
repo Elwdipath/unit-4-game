@@ -48,4 +48,15 @@ console.log(crystal.crystalValues)
     })
 
 /* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
+
+    if (crystal.currentScore === crystal.scoreToReach){
+
+        alert("Winner Winner Chicken Dinner");
+
+    } else if (crystal.currentScore > crystal.scoreToReach) {
+
+        alert("You lose")
+
+    }
+
 /* reset game */
