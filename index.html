@@ -4,17 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crystal Collector!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="redcrystal">Red</div>
-    <div id="bluecrystal">Blue</div>
-    <div id="yellowcrystal">Yellow</div id="yellocrystal" >
-    <div id="greencrystal">Green</div>
-    <div id="scoreToReach"> Goal</div>
-    <div id="currentScore">Current Score</div>
+    
+    <div class="row">
+        <div class="col-md"><h1>Crystals Collector!</h1></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <p>Here's how the app works:
+
+                * There will be four crystals displayed as buttons on the page.
+             
+                * The player will be shown a random number at the start of the game.
+                <br>
+             
+                * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+             
+                  * Your game will hide this amount until the player clicks a crystal.
+                  * When they do click one, update the player's score counter.
+             
+                * The player wins if their total score matches the random number from the beginning of the game.
+             
+                * The player loses if their score goes above the random number.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div id="scoreToReach">Your Current to Reach</div>
+        </div>
+        <div class="col-md-4">
+            <div class="wins">Wins:</div>
+            <div class="losses">Losses:</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div id="redcrystal">
+                <img src="./assets/images/redcrystal.jpeg" alt="red">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div id="bluecrystal">
+                <img src="./assets/images/bluecrystal.jpg" alt="blue">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div id="yellowcrystal">
+                <img src="./assets/images/yellowcrystal.png" alt="yellow">
+            </div> 
+        </div>
+        <div class="col-md-2">
+             <div id="greencrystal">
+                 <img src="./assets/images/greencrystal.png" alt="green">
+             </div>
+        </div>
+    </div>
 
     <script src="./assets/javascript/game.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+<div id="currentScore">Current Score</div>
