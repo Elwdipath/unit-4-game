@@ -15,7 +15,26 @@ function randomScore() {
     crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 }
 
-randomScore()
+function gameEnd() {
+
+    if (crystal.currentScore === crystal.scoreToReach){
+
+        alert("Winner Winner Chicken Dinner");
+        crystal.wins++
+
+    } else if (crystal.currentScore > crystal.scoreToReach) {
+
+        alert("You lose");
+        crystal.losses++
+
+    }
+
+
+}
+
+$(document).ready(function() {
+
+    randomScore()
 
 
 /* create a function to assign a numerical value for each crystal */
@@ -29,34 +48,32 @@ console.log(crystal.crystalValues)
 /* create an on click function that takes the value of the crystal clicked and add it to current score */
      $("#redcrystal").on("click", function (){
          crystal.currentScore = parseInt(crystal.crystalValues[0]) + parseInt(crystal.currentScore);
+         gameEnd()
          console.log(crystal.currentScore)
      })
 
      $("#bluecrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[1]) + parseInt(crystal.currentScore);
+        gameEnd()
         console.log(crystal.currentScore)
     })
 
     $("#greencrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[2]) + parseInt(crystal.currentScore);
+        gameEnd()
         console.log(crystal.currentScore)
     })
 
     $("#yellowcrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[3]) + parseInt(crystal.currentScore);
+        gameEnd()
         console.log(crystal.currentScore)
     })
 
 /* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
 
-    if (crystal.currentScore === crystal.scoreToReach){
+    
+});
 
-        alert("Winner Winner Chicken Dinner");
-
-    } else if (crystal.currentScore > crystal.scoreToReach) {
-
-        alert("You lose")
-
-    }
 
 /* reset game */
