@@ -15,6 +15,13 @@ function randomScore() {
     crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
 }
 
+function gameStart(){
+
+    $("#scoreToReach").append(crystal.scoreToReach)
+    console.log(crystal.scoreToReach)
+
+}
+
 function gameEnd() {
 
     if (crystal.currentScore === crystal.scoreToReach){
@@ -35,6 +42,7 @@ function gameEnd() {
 $(document).ready(function() {
 
     randomScore()
+    gameStart()
 
 
 /* create a function to assign a numerical value for each crystal */
@@ -44,6 +52,8 @@ $(document).ready(function() {
         
      }
 console.log(crystal.crystalValues)
+
+
 
 /* create an on click function that takes the value of the crystal clicked and add it to current score */
      $("#redcrystal").on("click", function (){
