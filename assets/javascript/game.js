@@ -18,10 +18,10 @@ function randomScore() {
 function gameStart(){
 
     $("#scoreToReach").append(crystal.scoreToReach)
-    console.log(crystal.scoreToReach)
+    $("#currentScore").append(crystal.currentScore)
 
 }
-
+/* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
 function gameEnd() {
 
     if (crystal.currentScore === crystal.scoreToReach){
@@ -45,13 +45,13 @@ $(document).ready(function() {
     gameStart()
 
 
-/* create a function to assign a numerical value for each crystal */
+/* create a for loop to assign a numerical value for each crystal */
     for ( var i = 0; i < 4; i++) {
         let num = [Math.floor(Math.random() * 12) + 1];
         crystal.crystalValues.push(num)
         
      }
-console.log(crystal.crystalValues)
+
 
 
 
@@ -59,28 +59,28 @@ console.log(crystal.crystalValues)
      $("#redcrystal").on("click", function (){
          crystal.currentScore = parseInt(crystal.crystalValues[0]) + parseInt(crystal.currentScore);
          gameEnd()
-         console.log(crystal.currentScore)
+         document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
      })
 
      $("#bluecrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[1]) + parseInt(crystal.currentScore);
         gameEnd()
-        console.log(crystal.currentScore)
+        document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
 
     $("#greencrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[2]) + parseInt(crystal.currentScore);
         gameEnd()
-        console.log(crystal.currentScore)
+        document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
 
     $("#yellowcrystal").on("click", function (){
         crystal.currentScore = parseInt(crystal.crystalValues[3]) + parseInt(crystal.currentScore);
         gameEnd()
-        console.log(crystal.currentScore)
+        document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
 
-/* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
+
 
     
 });
