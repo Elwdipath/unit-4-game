@@ -6,7 +6,7 @@ var crystal = {
 	losses: 0,
 	currentScore: 0,
     scoreToReach:[],
-    crystalValues: [],/* try to make this an array where the crystal function fills in*/
+    crystalValues: [],/* try to make this an array where the crystalValues loop fills in*/
 }
 
 
@@ -16,9 +16,10 @@ var crystal = {
 // }
 
 function gameStart(){
+    crystal.currentScore = 0
     crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-    $("#scoreToReach").append(crystal.scoreToReach)
-    $("#currentScore").append(crystal.currentScore)
+    document.getElementById("scoreToReach").innerText = `Score to Reach: ${crystal.scoreToReach}`
+    document.getElementById("currentScore").innerText = `Current Score: 0`
     for ( var i = 0; i < 4; i++) {
         let num = [Math.floor(Math.random() * 12) + 1];
         crystal.crystalValues.push(num)
@@ -82,6 +83,7 @@ $(document).ready(function() {
         gameEnd()
         document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
+    gameStart()
 });
 
 /* reset game */
