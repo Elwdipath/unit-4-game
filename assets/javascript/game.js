@@ -16,10 +16,15 @@ var crystal = {
 // }
 
 function gameStart(){
-    crystal.currentScore = 0
+    // Set score to 0 to start the game
+    crystal.currentScore = 0;
+    // Create a random number for the user to get to and set to scoreToReach
     crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    //Set dom for scoreToReach and currentSore
     document.getElementById("scoreToReach").innerText = `Score to Reach: ${crystal.scoreToReach}`
-    document.getElementById("currentScore").innerText = `Current Score: 0`
+    document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`
+
+    //create a for loop that will create for random numbers and place in the crystal.crystalValues array
     for ( var i = 0; i < 4; i++) {
         let num = [Math.floor(Math.random() * 12) + 1];
         crystal.crystalValues.push(num)
