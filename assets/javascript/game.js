@@ -18,17 +18,21 @@ var crystal = {
 function gameStart(){
     // Set score to 0 to start the game
     crystal.currentScore = 0;
+    crystal.crystalValues = [];
     // Create a random number for the user to get to and set to scoreToReach
     crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
+    
+    for ( var i = 0; i < 4; i++) {
+        let num = [Math.floor(Math.random() * 12) + 1];
+        crystal.crystalValues.push(num)
+     }
+    
     //Set dom for scoreToReach and currentSore
     document.getElementById("scoreToReach").innerText = `Score to Reach: ${crystal.scoreToReach}`
     document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`
 
     //create a for loop that will create for random numbers and place in the crystal.crystalValues array
-    for ( var i = 0; i < 4; i++) {
-        let num = [Math.floor(Math.random() * 12) + 1];
-        crystal.crystalValues.push(num)
-     }
+    
 }
 /* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
 function gameEnd() {
@@ -52,18 +56,22 @@ function gameEnd() {
     }
 }
 
+
+
+
+gameStart()
 $(document).ready(function() {
 
     // randomScore()
-    gameStart()
+    
 
 
 /* create a for loop to assign a numerical value for each crystal */
-    for ( var i = 0; i < 4; i++) {
-        let num = [Math.floor(Math.random() * 12) + 1];
-        crystal.crystalValues.push(num)
+    // for ( var i = 0; i < 4; i++) {
+    //     let num = [Math.floor(Math.random() * 12) + 1];
+    //     crystal.crystalValues.push(num)
         
-     }
+     
 /* create an on click function that takes the value of the crystal clicked and add it to current score */
      $("#redcrystal").on("click", function (){
          crystal.currentScore = parseInt(crystal.crystalValues[0]) + parseInt(crystal.currentScore);
@@ -88,7 +96,7 @@ $(document).ready(function() {
         gameEnd()
         document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
-    gameStart()
+    // gameStart()
 });
 
 /* reset game */
