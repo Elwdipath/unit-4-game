@@ -11,15 +11,18 @@ var crystal = {
 
 
 /* create a function to create a random number for the user to reach */
-function randomScore() {
-    crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
-}
+// function randomScore() {
+    
+// }
 
 function gameStart(){
-
+    crystal.scoreToReach = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     $("#scoreToReach").append(crystal.scoreToReach)
     $("#currentScore").append(crystal.currentScore)
-
+    for ( var i = 0; i < 4; i++) {
+        let num = [Math.floor(Math.random() * 12) + 1];
+        crystal.crystalValues.push(num)
+     }
 }
 /* create a conditional for what happens when the user matches the score(win)or goes over (loss)*/
 function gameEnd() {
@@ -27,25 +30,25 @@ function gameEnd() {
     if (crystal.currentScore === crystal.scoreToReach){
 
         alert("Winner Winner Chicken Dinner");
-        crystal.wins++
-        document.getElementById("wins").innerText =`Wins: ${crystal.wins}`
-
+        crystal.wins++;
+        document.getElementById("wins").innerText =`Wins: ${crystal.wins}`;
+        gameStart();
+        
     } else if (crystal.currentScore > crystal.scoreToReach) {
 
 
         alert("You lose");
-        crystal.losses++
-        document.getElementById("losses").innerText =`Losses: ${crystal.losses}`
+        crystal.losses++;
+        document.getElementById("losses").innerText =`Losses: ${crystal.losses}`;
+        $("#scoreToReach").empty();
+        gameStart();
 
     }
-
-
-
 }
 
 $(document).ready(function() {
 
-    randomScore()
+    // randomScore()
     gameStart()
 
 
@@ -55,10 +58,6 @@ $(document).ready(function() {
         crystal.crystalValues.push(num)
         
      }
-
-
-
-
 /* create an on click function that takes the value of the crystal clicked and add it to current score */
      $("#redcrystal").on("click", function (){
          crystal.currentScore = parseInt(crystal.crystalValues[0]) + parseInt(crystal.currentScore);
@@ -83,11 +82,6 @@ $(document).ready(function() {
         gameEnd()
         document.getElementById("currentScore").innerText = `Current Score: ${crystal.currentScore}`;
     })
-
-
-
-    
 });
-
 
 /* reset game */
