@@ -11,67 +11,70 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
 </head>
 <body>
-    
-    <div class="row">
-        <div class="col-md"><h1>Crystals Collector!</h1></div>
-    </div>
-
-    <div class="row">
-        <div class="col-md">
-            <p>Here's how the app works:
-
-                * There will be four crystals displayed as buttons on the page.
-             
-                * The player will be shown a random number at the start of the game.
-                <br>
-             
-                * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-             
-                  * Your game will hide this amount until the player clicks a crystal.
-                  * When they do click one, update the player's score counter.
-             
-                * The player wins if their total score matches the random number from the beginning of the game.
-             
-                * The player loses if their score goes above the random number.</p>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            
-            <div id="scoreToReach"><p>Your Current to Reach:</p></div>
-        </div>
-        <div class="col-md-4">
-            <div class="wins">Wins:</div>
-            <div class="losses">Losses:</div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-2">
-            <div id="redcrystal">
-                <img src="./assets/images/redcrystal.jpeg" alt="red">
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <h1>Crystals Collector</h1>
             </div>
         </div>
-        <div class="col-md-2">
-            <div id="bluecrystal">
-                <img src="./assets/images/bluecrystal.jpg" alt="blue">
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Here's how the app works:
+
+                    * There will be four crystals displayed as buttons on the page.
+                
+                    * The player will be shown a random number at the start of the game.
+                    <br>
+                
+                    * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
+                    <br>
+                    * Your game will hide this amount until the player clicks a crystal.
+                    * When they do click one, update the player's score counter.
+                
+                    * The player wins if their total score matches the random number from the beginning of the game.
+                
+                    * The player loses if their score goes above the random number.</p>
             </div>
         </div>
-        <div class="col-md-2">
-            <div id="yellowcrystal">
-                <img src="./assets/images/yellowcrystal.png" alt="yellow">
-            </div> 
-        </div>
-        <div class="col-md-2">
-             <div id="greencrystal">
-                 <img src="./assets/images/greencrystal.png" alt="green">
-             </div>
-        </div>
-    </div>
-    <div id="currentScore">Current Score: </div>
 
-    <script src="./assets/javascript/game.js"></script>
+        <div class="row">
+            <div class="col-md-4">
+                
+                <div id="scoreToReach"><p>Your Current to Reach:</p></div>
+                <div id="currentScore">Current Score: </div>
+            </div>
+            <div class="col-md-4">
+                <div id ="wins">Wins:</div>
+                <div id ="losses">Losses:</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div id="redcrystal">
+                    <img src="./assets/images/redcrystal.jpeg" alt="red">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="bluecrystal">
+                    <img src="./assets/images/bluecrystal.jpg" alt="blue">
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div id="yellowcrystal">
+                    <img src="./assets/images/yellowcrystal.png" alt="yellow">
+                </div> 
+            </div>
+            <div class="col-md-2">
+                <div id="greencrystal">
+                    <img src="./assets/images/greencrystal.png" alt="green">
+                </div>
+            </div>
+        </div>
+    </div>   
+
+        <script src="./assets/javascript/game.js"></script>
 </body>
 </html>
 

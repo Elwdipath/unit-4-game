@@ -28,13 +28,17 @@ function gameEnd() {
 
         alert("Winner Winner Chicken Dinner");
         crystal.wins++
+        document.getElementById("wins").innerText =`Wins: ${crystal.wins}`
 
     } else if (crystal.currentScore > crystal.scoreToReach) {
 
+
         alert("You lose");
         crystal.losses++
+        document.getElementById("losses").innerText =`Losses: ${crystal.losses}`
 
     }
+
 
 
 }
