@@ -1,5 +1,5 @@
 /* crystal game */
-
+$(document).ready(function() {
 /* create variables for wins, losses, current score, number to reach, values for each crystal,*/
 var crystal = {
 	wins: 0,
@@ -60,7 +60,7 @@ function gameEnd() {
 
 
 gameStart()
-$(document).ready(function() {
+
 
     // randomScore()
     
